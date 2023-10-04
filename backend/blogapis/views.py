@@ -77,11 +77,22 @@ class LoginAPI(APIView):
                 "data":serializer.errors
                  })
                 refresh = RefreshToken.for_user(user)
+                if user.is_staff is False:
+                    return Response({
+                'status':400,
+                'message':"Your account is not verified",
+                "data":serializer.errors
+                 })
+
                 return Response({
         'refresh': str(refresh),
         'access': str(refresh.access_token),
         "msg":"heres the token"
     } )
+#     {
+# "email":"jaiparmani40@gmail.com",
+# "password":"user1234"
+# }
 
             else:
                 return Response({
