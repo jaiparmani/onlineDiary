@@ -2,8 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import PostSerializer, TypesOfPostsSerializer
+from rest_framework.views import APIView
+
+from .serializers import PostSerializer, TypesOfPostsSerializer, LoginSerializer
+from django.contrib.auth import  authenticate
 from .models import Post,  TypesOfPosts
+from rest_framework_simplejwt.tokens import RefreshToken
+ 
 # Create your views here.
 def index(request):
     return HttpResponse("Hello from the other side")
@@ -50,3 +55,43 @@ def typesOfPostsList(request):
     return Response(serializer.data)
 
 
+
+
+class LoginAPI(APIView):
+    def post(self, request):
+        try:
+            data = request.data
+            serializer = LoginSerializer(data = data)
+            print(serializer)
+            if serializer.is_valid():
+                email = serializer.data["email"]
+                password = serializer.data["password"]
+                print(email, password)
+                user = authenticate(username = email, password = password )
+                print(user)
+                print(authenticate())
+                if user is None:
+                    return Response({
+                'status':400,
+                'message':"Invalid Password",
+                "data":serializer.errors
+                 })
+                refresh = RefreshToken.for_user(user)
+                return Response({
+        'refresh': str(refresh),
+        'access': str(refresh.access_token),
+        "msg":"heres the token"
+    } )
+
+            else:
+                return Response({
+                'status':400,
+                'message':"Something Went Wrong",
+                "data":serializer.errors
+                 })
+        except Exception as e:
+            return Response({
+                'status':400,
+                'message':"Something Went Wrong",
+                "data": "An exception occured" + str(e)
+                 })

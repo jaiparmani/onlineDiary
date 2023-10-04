@@ -22,7 +22,7 @@ urlpatterns = [
     path("create_blog/", blog.create_blog),
     path("postList/", blog.postList),
     path("subjectList/", blog.typesOfPostsList),
-
+    path("login/", blog.LoginAPI.as_view()),
 
 
 ]

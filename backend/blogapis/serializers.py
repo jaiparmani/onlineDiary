@@ -12,3 +12,8 @@ class TypesOfPostsSerializer(serializers.ModelSerializer):
     
         model = TypesOfPosts
         fields = '__all__'
+
+class LoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField()
+ 

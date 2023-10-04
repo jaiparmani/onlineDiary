@@ -17,4 +17,11 @@ class TypesOfPosts(models.Model):
     def __str__(self):
         return self.subject
 
-class User(Abs)
+# class User(AbstractUser):
+#     username = models.CharField(max_length=50)
+#     email = models.EmailField(max_length=254, unique = True)
+#     phoneNumber = models.CharField(max_length = 10, unique = True)
+#     password = models.CharField(max_length=50)
+#     USERNAME_FIELD = 'email'
+
+#     REQUIRED_FIELDS = []
