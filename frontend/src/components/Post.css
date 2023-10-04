@@ -1,0 +1,280 @@
+/* a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    margin: 30px 0;
+    border-color: white;
+}
+
+@mixin font() {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    @include font();
+}
+
+body {
+    background: url('http://i1040.photobucket.com/albums/b406/purpleswag/ocean_friends_pattern_by_pronouncedyou-d5baaay_zpstnn1b5df.jpg') fixed;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+}
+
+.underline {
+    width: 40%;
+    margin: 40px auto;
+    display: none;
+}
+
+.home {
+    height: 100vh;
+    width: 100%;
+    background: url('http://i1040.photobucket.com/albums/b406/purpleswag/homepage-background-images-211_zpshfprzfbh.jpg') no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.navbar {
+    margin: 0 auto;
+    width: 300px;
+    border-bottom: 1px solid white;
+    height: 35px;
+    margin-top: 35px;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a {
+        @include font();
+        text-transform: uppercase;
+
+        &:hover {
+            color: black;
+        }
+    }
+}
+
+.home-title {
+    text-align: center;
+    margin: 110px 0;
+
+    h1 {
+        @include font();
+        text-transform: uppercase;
+        font-size: 80px;
+    }
+}
+
+#add-post {
+    display: block;
+    width: 135px;
+    height: 50px;
+    margin: 0 auto;
+    background: none;
+    border: 2px solid white;
+    @include font();
+    font-size: 20px;
+    border-radius: 2px;
+    transition: 0.3s ease;
+
+    &:hover {
+        background-color: #32A64D;
+        border-color: green;
+        cursor: pointer;
+        color: black;
+    }
+}
+
+.posts {
+    color: black;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+
+    p {
+        color: black;
+        font-size: 20px;
+        width: 10%;
+    }
+
+    ul {
+        margin-top: 50px;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+}
+
+.modal-content {
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    background-color: #fefefe;
+    margin: 8% auto 0;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+
+    input {
+        width: 75%;
+        border: 2px solid grey;
+        border-radius: 4px;
+        @include font();
+        color: black;
+        padding: 10px;
+        height: 40px;
+    }
+
+    textarea {
+        @extend input;
+        height: initial;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+.modal-add-post {
+    @extend #add-post;
+    background-color: #32A64D;
+    border-color: #32A64D;
+    color: black;
+
+    &:hover {
+        background-color: #2D9144;
+        border-color: black;
+    }
+}
+
+.post-container {
+    max-width: 1000px;
+    margin: 100px auto 50px;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid grey;
+
+    .post-image {
+        width: 200px;
+        float: left;
+        margin-right: 15px;
+
+        .post-photo {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .post-content {
+        h2 {
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-top: 25px;
+            text-align: justify;
+            font-family: 'Arial';
+            line-height: 25px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+    }
+}
+
+.post-info {
+    .tags-container {
+        margin-bottom: 30px;
+
+        p {
+            display: inline-block;
+            background-color: #c7c7c7;
+            padding: 3px 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin: 0 30px 15px 0;
+        }
+    }
+}
+
+.post-author {
+    display: inline;
+}
+
+.date {
+    float: right;
+} */
