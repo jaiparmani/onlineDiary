@@ -43,8 +43,9 @@ def create_blog(request):
     
 @api_view(['GET'])
 def postList(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('timestamp')[::-1]
     serializer = PostSerializer(posts, many=True)
+    print((serializer.data))
     return Response(serializer.data)
 
 
